@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HungerVerse AI</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#081c15,#1b4332,#2d6a4f);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ---------- LOADER INTRO ---------- */
+.loader{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:#081c15;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    z-index:9999;
+    animation:hideLoader 4s forwards;
+}
+
+.loader h1{
+    font-size:60px;
+    color:#00ffae;
+    letter-spacing:3px;
+    animation:zoomIn 1.5s ease;
+}
+
+.loader p{
+    margin-top:15px;
+    font-size:18px;
+    color:#ddd;
+    animation:fadeUp 2s ease;
+}
+
+.loader .ring{
+    width:90px;
+    height:90px;
+    border:5px solid rgba(255,255,255,0.2);
+    border-top:5px solid #00ffae;
+    border-radius:50%;
+    margin-bottom:30px;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    100%{transform:rotate(360deg);}
+}
+
+@keyframes zoomIn{
+    from{transform:scale(0);opacity:0;}
+    to{transform:scale(1);opacity:1;}
+}
+
+@keyframes fadeUp{
+    from{transform:translateY(40px);opacity:0;}
+    to{transform:translateY(0);opacity:1;}
+}
+
+@keyframes hideLoader{
+    0%,85%{opacity:1;visibility:visible;}
+    100%{opacity:0;visibility:hidden;}
+}
+
+/* ---------- Main Content ---------- */
+.main-content{
+    animation:showContent 4.2s ease;
+}
+
+@keyframes showContent{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+/* Navbar */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    position:sticky;
+    top:0;
+}
+
+nav h1{
+    color:#00ffae;
+    font-size:28px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#00ffae;
+}
+
+/* Hero */
+.hero{
+    height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h2{
+    font-size:65px;
+    max-width:900px;
+    animation:fadeUp 1.5s ease;
+}
+
+.hero span{
+    color:#00ffae;
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:22px;
+    color:#ddd;
+    animation:fadeUp 2s ease;
+}
+
+.hero button{
+    margin-top:30px;
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    background:#00ffae;
+    color:#111;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+    animation:fadeUp 2.5s ease;
+}
+
+.hero button:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 20px #00ffae;
+}
+
+/* Floating circles */
+.circle{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,0.08);
+    animation:float 6s infinite ease-in-out;
+}
+
+.c1{width:120px;height:120px;top:20%;left:8%;}
+.c2{width:80px;height:80px;top:65%;left:15%;}
+.c3{width:100px;height:100px;top:30%;right:10%;}
+.c4{width:70px;height:70px;bottom:10%;right:20%;}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-25px);}
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:25px;
+    background:rgba(255,255,255,0.05);
+    color:#ddd;
+}
+
+/* Mobile */
+@media(max-width:768px){
+nav{
+    flex-direction:column;
+    gap:15px;
+}
+.hero h2{
+    font-size:42px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Intro Animation -->
+<div class="loader">
+    <div class="ring"></div>
+    <h1>HungerVerse AI</h1>
+    <p>Loading Future of Zero Hunger...</p>
+</div>
+
+<!-- Main Website -->
+<div class="main-content">
+<nav>
+   <h1>HungerVerse AI</h1>
+
+   <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#map">AI Map</a></li>
+      <li><a href="#dashboard">Dashboard</a></li>
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#login">Login</a></li>
+   </ul>
+</nav>
+
+<section class="hero">
+
+<div class="circle c1"></div>
+<div class="circle c2"></div>
+<div class="circle c3"></div>
+<div class="circle c4"></div>
+
+<h2>We <span>Predict Hunger</span><br>Before It Happens</h2>
+<p>Creative AI Powered Platform To Eliminate Hunger & Reduce Food Waste</p>
+<button>Explore Innovation</button>
+<button onclick="saveFood()">Donate Food</button>
+<section class="donations-section">
+   <h2>Live Food Donations</h2>
+   <div id="donationList"></div>
+</section>
+<section class="ai-section">
+   <h2>AI Hunger Prediction Dashboard</h2>
+
+   <div class="ai-grid">
+
+      <div class="ai-card">
+         <h3>Mysore</h3>
+        <p id="mysoreRisk" class="medium">Loading...</p>
+      </div>
+
+      <div class="ai-card">
+         <h3>Bangalore</h3>
+        <p id="bangaloreRisk" class="medium">Loading...</p>
+      </div>
+
+      <div class="ai-card">
+         <h3>Mandya</h3>
+         <p id="mandyaRisk" class="medium">Loading...</p>
+      </div>
+
+   </div>
+</section>
+<button onclick="sendAlert()" class="alert-btn">
+🚨 Send Emergency NGO Alert
+</button>
+<section class="chart-section">
+   <h2>Live Hunger Analytics</h2>
+   <canvas id="myChart"></canvas>
+</section>
+<section class="map-section">
+<h2>Nearby Food Locations</h2>
+<div id="map"></div>
+</section>
+<section class="login-section" id="login">
+    <h2>Login Portal</h2>
+
+    <div class="login-box">
+        <input type="text" placeholder="Enter Email">
+        <input type="password" placeholder="Enter Password">
+
+        <button onclick="userLogin()">User Login</button>
+        <button onclick="ngoLogin()">NGO Login</button>
+    </div>
+</section>
+<section class="donate-section">
+   <h2>Donate Food</h2>
+
+   <div class="donate-box">
+      <input type="text" placeholder="Food Name">
+      <input type="number" placeholder="Quantity">
+      <input type="text" placeholder="Location">
+      <input type="text" placeholder="Expiry Time">
+
+      <button onclick="alert('Donation Submitted Successfully!')">
+         Submit Donation
+      </button>
+   </div>
+</section>
+<footer>
+© 2026 HungerVerse AI | Predict Hunger. Prevent Waste.
+</footer>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div id="loginBox" class="login-box">
+<h2>Login</h2>
+<input type="text" placeholder="Email">
+<input type="password" placeholder="Password">
+<button onclick="closeLogin()">Submit</button>
+</div>
+<script type="module" src="script.js"></script>3333
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDx_tycM2RABH3cjzNjmmSusleQztVqkpw&callback=initMap">
+</script>
+</body>
+</html>
